@@ -1,6 +1,0 @@
-ETAPE FOOD 
-
-1 TRELLO
-2 RECHERCHE LES DONNEES INUTILE (COLONNES, LIGNES)
-3 nutriscore (supprission, recalcul , remplissage, machine learning) 
-
