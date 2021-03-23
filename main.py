@@ -26,25 +26,25 @@ data_clean = data_clean.dropna(subset=['fat_100g','energy_100g', 'sugars_100g', 
 
 your_list = ['fat_100g','energy_100g', 'sugars_100g', 'fiber_100g', 'proteins_100g', 'sodium_100g', 'saturated-fat_100g']
 for i in your_list:
-    data.loc[data[i].isnull(),i]=0
+    data_clean.loc[data_clean[i].isnull(),i]=0
 
-data = data[data["nutrition_grade_fr"].isnull() == False]
+data_clean = data_clean[data_clean["nutrition_grade_fr"].isnull() == False]
 
-sugars_outliers = data.loc[data["sugars_100g"] > 100 ]
-sugars_outliers1 = data.loc[data["sugars_100g"] < 0 ]
-fiber_outliers = data.loc[data["fiber_100g"] > 100 ]
-fiber_outliers1 = data.loc[data["fiber_100g"] < 0 ]
-proteins_outliers = data.loc[data["proteins_100g"] > 100 ]
-proteins_outliers1 = data.loc[data["proteins_100g"] < 0 ]
-sodium_outliers = data.loc[data["sodium_100g"] > 100 ]
-sodium_outliers1 = data.loc[data["sodium_100g"] < 0 ]
-fat_outliers = data.loc[data["fat_100g"] > 100 ]
-fat_outliers1 = data.loc[data["fat_100g"] < 0 ]
+sugars_outliers = data_clean.loc[data_clean["sugars_100g"] > 100 ]
+sugars_outliers1 = data_clean.loc[data_clean["sugars_100g"] < 0 ]
+fiber_outliers = data_clean.loc[data_clean["fiber_100g"] > 100 ]
+fiber_outliers1 = data_clean.loc[data_clean["fiber_100g"] < 0 ]
+proteins_outliers = data_clean.loc[data_clean["proteins_100g"] > 100 ]
+proteins_outliers1 = data_clean.loc[data_clean["proteins_100g"] < 0 ]
+sodium_outliers = data_clean.loc[data_clean["sodium_100g"] > 100 ]
+sodium_outliers1 = data_clean.loc[data_clean["sodium_100g"] < 0 ]
+fat_outliers = data_clean.loc[data_clean["fat_100g"] > 100 ]
+fat_outliers1 = data_clean.loc[data_clean["fat_100g"] < 0 ]
 
-data = data.drop(sugars_outliers1.index, axis=0)
-data = data.drop(sugars_outliers.index, axis=0)
-data = data.drop(proteins_outliers.index, axis=0)
-data = data.drop(fiber_outliers.index, axis=0)
+data_clean = data_clean.drop(sugars_outliers1.index, axis=0)
+data_clean = data_clean.drop(sugars_outliers.index, axis=0)
+data_clean = data_clean.drop(proteins_outliers.index, axis=0)
+data_clean = data_clean.drop(fiber_outliers.index, axis=0)
 
 
 
