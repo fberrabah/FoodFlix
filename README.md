@@ -28,4 +28,8 @@ Présentation individuelle de 15 minutes + 5 à 10 minutes de questions.
 
 - Code d’analyse de la donnée non-cleané
 - Code de sélection des données et de nettoyage de ces données
+<<<<<<< HEAD
 - Slides de présentation du travail réalisé
+=======
+- Slides de présentation du travail réalisé
+>>>>>>> 3d342c2674dc483214f0dd4e954bab5f95c647e3
