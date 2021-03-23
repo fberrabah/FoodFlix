@@ -8,4 +8,4 @@ df = pd.read_csv(file_path)
 
 profile = ProfileReport(df, title = 'Pandas Profiling Report')
 
-profile.to_file("your_report.html")
+profile.to_file("your_report1.html")
