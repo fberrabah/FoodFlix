@@ -16,7 +16,7 @@ st.title("Bienvenue sur FOODFLIX")
 
 user_input = st.sidebar.text_input('Entrer le produit que vous cherchez :').lower() 
 st.write(user_input)
-st.sidebar.selectbox('Select methode', ["tfidf","BERT"])
+st.sidebar.selectbox('Select methode', ["TFIDF","BERT"])
 
 
 

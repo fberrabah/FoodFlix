@@ -12,7 +12,6 @@ from src.modeling.train_model import tf, tfidf_matrix
 def get_similar_products(user_input):
     # user_input = input("Enter product name:")
     #print("product name is: " + user_input)
-
     user_matrix = tf.transform([user_input])
     #user_matrix = tf.encode([user_input])
     cosine_similarities = linear_kernel(user_matrix, tfidf_matrix)
