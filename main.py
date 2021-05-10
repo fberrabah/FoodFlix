@@ -9,14 +9,16 @@ data_c = pd.read_csv('/home/apprenant/Desktop/FARIZD/FOOD/Data/en.openfoodfacts.
 
 data_clean = data_c.sample(n=30000)
 
-
-data_clean = data_clean[['countries', 'categories', 'product_name', 'energy_100g', 'sugars_100g', 'fiber_100g', 'proteins_100g', 'sodium_100g', 'saturated-fat_100g', 'nutrition-score-fr_100g', 'nutrition_grade_fr','fat_100g','additives_n','additives','additives_tags']]
+data_clean = data_clean[['countries', 'categories', 'product_name', 'brands', 'energy_100g', 'sugars_100g', 'fiber_100g', 'proteins_100g','salt_100g', 'sodium_100g', 'saturated-fat_100g','fat_100g', 'nutrition-score-fr_100g', 'nutrition_grade_fr','additives_n','additives','additives_tags','image_url',
+ 'image_small_url','ingredients_text']]
 
 data_clean["countries"] = data_clean["countries"].apply(
     lambda x: "France" if re.match(r".*(fr).*", str(x), re.IGNORECASE) else x )
 
 
 data_clean = data_clean.loc[data_clean.countries == 'France']
+
+data_clean["image_url"].fillna("https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Pas_d%27image_disponible.svg/100px-Pas_d%27image_disponible.svg.png", inplace = True)
 
 
 data_clean = data_clean[data_clean["product_name"].isnull() == False]
